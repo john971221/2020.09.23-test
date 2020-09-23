@@ -1,0 +1,293 @@
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins-Light"
+}
+
+header {
+    position: fixed;
+    width: 1800px;
+    margin: 63px;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+header h2 {
+    font-size: 40pt;
+}
+
+header .menue {
+    display: flex;
+    top: 0;
+}
+
+header .menue span {
+    height: 4px;
+    width: 25px;
+    background: #fff;
+    margin: 7px;
+    display: block;
+    transition:.5s;
+    opacity:1;
+}
+header .menue.active span:nth-of-type(2){
+    opacity:0;
+    margin:0;
+    height:0;
+    width:0;
+    transition:.1s;
+    left:50px;
+}
+header .menue.active span:nth-of-type(1){
+    transform:rotate(45deg) translateY(8px);
+    transition:.5s;
+}
+header .menue.active span:nth-of-type(3){
+    transform:rotate(-45deg)translateY(-8px);
+        transition:.5s;
+}
+
+header .menue ul {
+    list-style: none;
+    position: absolute;
+    display:flex;
+}
+
+header .menue ul li {
+    padding: 0 30px;
+    color: #fff;
+    position:absolute;
+    opacity: 0;
+    transition: .5s;
+    animation: burgergone 1s 0s alternate;
+    font-size:20pt;
+}
+header .menue ul li.active{
+    transition: .5s;
+    opacity: 1;
+    animation: burger 1s 0s alternate;
+}
+@keyframes burgergone {
+    0%{right:63px;},
+    100%{right:0px;}
+}
+@keyframes burger {
+    0%{right:0px;},
+    100%{right:63px;}
+}
+header .menue ul li:nth-of-type(1){right:33px}
+header .menue ul li:nth-of-type(2){right:132px;}
+header .menue ul li:nth-of-type(3){right:264px;white-space: pre;}
+
+
+
+
+main{position: relative;}
+
+main .wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+
+main .wrapper .left {
+    width: 30%;
+    height: 100vh;
+    float: left;
+    position: relative
+}
+
+main .wrapper .left .deco {
+    position: absolute;
+    left: 63px;
+    top: 45%;
+}
+
+main .wrapper .left .deco h2 {
+    font-size: 40pt;
+}
+main .wrapper .left .deco span{
+    height:200px;
+    width:1px;
+    background-color: #999999;
+    border:1px solid #999999;
+    display: block;
+    border-radius: 100%;
+}
+main .wrapper .left .deco span:nth-of-type(1){
+    position:absolute;
+    top:-240px;
+    right:30px;
+}
+main .wrapper .left .deco span:nth-of-type(2){
+    position:absolute;
+    bottom:-240px;
+    right:30px;
+}
+
+
+
+
+main .wrapper .right {
+    width: 70%;
+    height: 100vh;
+    background: #ffc000;
+    float: right;
+}
+
+
+
+
+
+.swinging {
+    animation: swinging ease-in-out 1s infinite alternate;
+    transform-origin: bottom 10px;
+    float: left;
+}
+
+
+@keyframes swinging {
+    0% {
+        transform: rotate(3deg);
+    }
+
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+main .wrapper .right .content {
+    padding: 10% 8%;
+    height: auto;
+    color: #fff;
+}
+
+main .wrapper .right .content h2 {
+    font-size: 70pt;
+    white-space: pre-line;
+    padding-bottom: 52px;
+    text-shadow: 10px 8px 5px gray;
+    line-height: 74pt;
+    animation: h2move 1s 0s alternate;
+}
+
+@keyframes h2move {
+    0% {
+        transform: translateY(-500px)
+    }
+
+    100% {
+        transform: translateY(0px)
+    }
+}
+
+main .wrapper .right .content .underCon {
+    animation: pmove 1s 0s alternate;
+}
+
+@keyframes pmove {
+    0% {
+        transform: translateY(500px)
+    }
+
+    100% {
+        transform: translateY(0px)
+    }
+}
+
+main .wrapper .right .content .underCon p {
+    font-size: 18pt;
+    padding-bottom: 70px;
+    text-transform: uppercase;
+}
+
+main .wrapper .right .content .underCon a {
+    text-decoration-line: underline;
+}
+main .wrapper .right .radius{
+    position:fixed;
+    right:63px;
+    top:44%;;
+}
+main .wrapper .right .radius span.active{background:#fff;}
+main .wrapper .right .radius span{
+    width:10px;
+    height:10px;
+    border:3px solid #fff;
+    border-radius: 100%;
+    display:block;
+    
+}
+main .wrapper .right .radius span:nth-of-type(2){
+    margin: 25px 0;
+}
+
+main .popup {
+    background-color: aqua;
+    width: 800px;
+    height: 554px;
+    z-index: 101;
+    position:absolute;
+    top:200px;
+    left:28%;
+    display:none;
+}
+main .popup.active{
+    display:block;
+}
+main .popup.active html{background: background-color: rgba( 255, 255, 255, 0.5 );}
+main .popup .Xbtn span{
+    height:4px;
+    width:50px;
+    background-color:#fff;
+    position:absolute;
+    right:-8%;
+    top:4%;
+}
+main .popup .Xbtn span:nth-of-type(1){
+    transform:rotate(45deg);
+}
+main .popup .Xbtn span:nth-of-type(2){
+    transform:rotate(-45deg);
+}
+
+
+footer {
+    position: fixed;
+    height: auto;
+    z-index: 99;
+    bottom: 63px;
+    right: 63px;
+}
+
+footer .sns ul {
+    display: flex;
+}
+
+footer .sns {
+    padding-right: 100px;
+}
+
+footer .sns ul li {
+    list-style: none;
+}
+
+footer .sns ul li:nth-of-type(2) {
+    padding: 0 34px;
+}
